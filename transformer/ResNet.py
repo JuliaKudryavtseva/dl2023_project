@@ -1,15 +1,8 @@
-from functools import partial
 from typing import Any, Callable, List, Optional, Type, Union
-from enum import Enum
 from types import FunctionType
 import torch
 import torch.nn as nn
 from torch import Tensor
-
-try:
-    from torch.hub import load_state_dict_from_url  
-except ImportError:
-    from torch.utils.model_zoo import load_url as load_state_dict_from_url
 
 def conv3x3(in_planes: int, out_planes: int, stride: int = 1, groups: int = 1, dilation: int = 1) -> nn.Conv2d:
     """3x3 convolution with padding"""
