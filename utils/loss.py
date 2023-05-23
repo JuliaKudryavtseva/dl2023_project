@@ -30,3 +30,12 @@ class FocalLoss(nn.Module):
         return loss
     
     
+class WeightedMultilabel(nn.Module):  
+    def __init__(self, weights: torch.Tensor):  
+        super(WeightedMultilabel, self).__init__()  
+        self.cerition = nn.BCEWithLogitsLoss(reduction='none')  
+        self.weights = weights  
+  
+    def forward(self, outputs, targets):  
+        loss = self.cerition(outputs, targets)  
+        return (loss * self.weights).mean()  
