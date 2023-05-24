@@ -11,6 +11,9 @@ def get_loss(loss_name, params=None):
         alpha, gamma = params
         criteriation = FocalLoss(alpha=alpha, gamma=gamma)
         
+    elif loss_name=='w':
+        criteriation = WeightedMultilabel(params)
+        
     else:
         raise ValueError('Incorrect loss')
     
