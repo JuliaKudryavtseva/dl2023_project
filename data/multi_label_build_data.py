@@ -26,18 +26,14 @@ data = pd.read_csv('sample_labels.csv')
 data['lables'] = data['Finding Labels'].str.split('|')
 data['Image Index'] = './sample/images/' + data['Image Index']
 
-# chen = []
-# for path_img in data['Image Index'].values:
-#     img = Image.open(path_img)
-#     chen.append(transforms.ToTensor()(img).shape)
+labels = []
+for lable in data['lables'].values:
+    labels.extend(lable)   
+    
+labels = pd.DataFrame(labels, columns=['labels'])
+weights = 1 / (labels.value_counts()/ labels.shape[0])
+weights = torch.tensor(weights.reset_index().sort_values(by='labels')[0].values)
 
-# bad_img = data.loc[pd.DataFrame(chen)[0] > 1, 'Image Index'].values
-
-# for path_img in bad_img:
-#     img = plt.imread(path_img)
-#     img = img[:, :, 0]
-#     img = Image.fromarray(np.uint8(img * 255), 'L')
-#     img.save(path_img,"PNG")
     
 
 # Dtaset
@@ -88,5 +84,5 @@ def build_dataloader(transfrom, BATCH_SIZE):
                         'Effusion', 'Emphysema', 'Fibrosis', 'Hernia', 'Infiltration',
                         'Mass', 'No Finding', 'Nodule', 'Pleural_Thickening', 'Pneumonia',
                         'Pneumothorax'])
-    return train_dataloader, test_dataloader, len(trainset), len(testset), num_class
+    return train_dataloader, test_dataloader, len(trainset), len(testset), num_class, weights
 
