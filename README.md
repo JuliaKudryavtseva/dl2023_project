@@ -53,4 +53,4 @@ The results of our experiments are shown in two tables below.
 * DenseNets and ResNets were unstable, while EfficientNet_B0 showed stable learning.
 * ViT with metrics, as other algorithms and showed stable learning.
 ### Conclusion
-Overall, EfficientNet is the most efficient models for both multi-class and multi-label classification problems. They perform well in all metrics and show stable learning. ViT performs as other algorithms in terms of metrics. However, there are significantly less params to train. That makes this architecture to be alternative for ConvNets in the future.
+Overall, EfficientNet is the most efficient model for both multi-class and multi-label classification problems. They perform well in all metrics and show stable learning. ViT performs as other algorithms in terms of metrics. However, there are significantly less params to train. That makes this architecture to be alternative for ConvNets in the future.
