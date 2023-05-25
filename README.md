@@ -1,5 +1,5 @@
 # Medical Image Classification with ResNets, DenseNets, EfficientNet and ViT
-Medical image classification plays an increasingly important role in healthcare, especially in diagnosing, treatment planning, and disease monitoring. However, the lack of large publicly available datasets with annotations means it is still very difficult, if not impossible, to achieve clinically relevant computer-aided detection and diagnosis (CAD). In recent years, deep learning models have been shown to be very effective at image classification, and they are increasingly being used to improve medical tasks. Thus, this project aims to explore the use of different convolutional neural network (CNN) architectures for medical image classification. Specifically, we will examine the performance of 6 different CNN models (ResNet18, ResNet152, DenseNet121, DenseNet161, EfficientNet, and ViT) on datasets of blood cell images and chest X-ray images.
+Medical image classification plays an increasingly important role in healthcare, especially in diagnosing, treatment planning, and disease monitoring. However, the lack of large publicly available datasets with annotations means it is still very difficult, if not impossible, to achieve clinically relevant computer-aided detection and diagnosis (CAD). In recent years, deep learning models have been shown to be very effective at image classification, and they are increasingly being used to improve medical tasks. Thus, this project aims to explore the use of different convolutional neural network (CNN) architectures for medical image classification. Specifically, we will examine the performance of 6 different CNN models (ResNet18, ResNet152, DenseNet121, DenseNet161, EfficientNet_B0, and ViT) on datasets of blood cell images and chest X-ray images.
 ### Datasets
 We will use two datasets for our experiments:
 1) [Blood Cell Images](https://www.kaggle.com/datasets/paultimothymooney/blood-cells): This dataset contains 12,500 augmented images of blood cells with 4 different cell types, namely Eosinophil, Lymphocyte, Monocyte, and Neutrophil. 
@@ -33,7 +33,7 @@ The results of our experiments are shown in two tables below.
 |	densenet161	| 0.916365	| 0.917669 | 0.916365	| 0.916586	| 0.916365 | 0.915667 | 0.916365 |
 | effnet	| 0.931242 |	0.933620 |	0.931242	| 0.931398 | 0.931242	| 0.931379 | 0.931242 |
 | vit |	0.894250	| 0.912612 | 0.894250	| 0.894179	| 0.894250 | 0.895673 |	0.894250 |
-* ResNet18 and EfficientNet are two best models with 0.93 accuracy and F1 score.
+* ResNet18 and EfficientNet_B0 are two best models with 0.93 accuracy and F1 score.
 * DenseNet121 and DenseNet161 are unstable, accuracy and F1 are 0.87 and 0.91 correspondingly for both nets. 
 * ViT showed SOTA results (accuracy: 0.89, F1: 0.89) with stable learning. 
 2)	For multi-label classification problem:
@@ -47,8 +47,8 @@ The results of our experiments are shown in two tables below.
 |	effnet | 0.520963 |	0.520963 | 0.520963 |	0.520963 | 0.520963 |
 |	vit	| 0.520963 | 0.520963 | 0.520963 | 0.520963	| 0.520963 |
 
-* DenseNets and EfficientNet showed satisfied results with 0.52 accuracy and F1 score
-* DenseNets and ResNets were unstable, while EfficientNet_b0 showed stable learning.
+* DenseNets and EfficientNet_B0 showed satisfied results with 0.52 accuracy and F1 score
+* DenseNets and ResNets were unstable, while EfficientNet_B0 showed stable learning.
 * ViT with metrics, as other algorithms and showed stable learning.
 ### Conclusion
 Overall, EfficientNet is the most efficient models for both multi-class and multi-label classification problems. They perform well in all metrics and show stable learning. ViT performs as other algorithms in terms of metrics. However, there are significantly less params to train. That makes this architecture to be alternative for ConvNets in the future.
