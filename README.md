@@ -14,11 +14,18 @@ Multi-label classification involves instances that can belong to multiple classe
 2)	[DenseNet](https://arxiv.org/pdf/1608.06993v5.pdf), or Densely Connected Network, is another deep convolutional neural network architecture that was introduced in 2016 by Huang et al. DenseNets are similar to ResNets, but they use dense connections to connect all of the layers in the network. This allows the network to learn more global features and improve the accuracy of the model.
 3)	[EfficientNet](https://arxiv.org/pdf/1905.11946v5.pdf) is a family of convolutional neural network architectures that were introduced in 2019 by Tan et al. EfficientNets are designed to be efficient in terms of both accuracy and computational resources. They achieve this by using a combination of techniques, including compound scaling, squeeze-and-excitation blocks, and autoML.
 4)	[ViT](https://arxiv.org/pdf/2010.11929.pdf), or Vision Transformer, is a deep learning model that was introduced in 2020 by Dosovitskiy et al. Vision Transformers are based on the transformer architecture, which was originally developed for natural language processing (NLP).
-### Results
+### Evaluation
+![image](https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/class_loss.jpg) 
+![image](https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/label_loss.jpg) 
+Multi-class classification | Multi-label classification
+:-------------------------:|:-------------------------:
+![](https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/class_acc.jpg)  |  ![](https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/label_acc.jpg)
+
+### Metrics
 The results of our experiments are shown in two tables below.
 1)	For multi-class classification problem:
 
-| model	| accuracy | precision (macro) |	precision (micro) |	recall (macro)	| recall (micro) |	F1 (macro)	| F1 (micro)|
+| Model	| Accuracy | Precision (macro) |	Precision (micro) |	Recall (macro)	| Recall (micro) |	F1 (macro)	| F1 (micro)|
 | :----------- | :----------- | :----------- |:----------- |:----------- |:----------- |:----------- | :-----------: |
 |	resnet152	| 0.914757 |	0.913539	| 0.914757 | 0.914980 | 0.914757 | 0.913517 | 0.914757 |
 | resnet18	| 0.932449 | 0.936440	| 0.932449 | 0.932577 |	0.932449 | 0.932841 |	0.932449 |
@@ -30,7 +37,8 @@ The results of our experiments are shown in two tables below.
 * DenseNet121 and DenseNet161 are unstable, accuracy and F1 are 0.87 and 0.91 correspondingly for both nets. 
 * ViT showed SOTA results (accuracy: 0.89, F1: 0.89) with stable learning. 
 2)	For multi-label classification problem:
-| model |	Exact Match Ratio	| Hamming loss |	Recall	| Precision |	F1 |
+
+| Model |	Exact match ratio	| Hamming loss |	Recall	| Precision |	F1 |
 | :----------- |:----------- |:----------- |:----------- |:----------- | :-----------: |
 | ResNet152	| 0.501338	| 0.501338	| 0.502230	| 0.501933 |	0.502052 |
 |	ResNet18 |	0.473684 |	0.473684 |	0.476360 |	0.474874 | 0.475320 |
