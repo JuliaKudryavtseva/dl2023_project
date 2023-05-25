@@ -33,7 +33,7 @@ The results of our experiments are shown in two tables below.
 |	densenet161	| 0.916365	| 0.917669 | 0.916365	| 0.916586	| 0.916365 | 0.915667 | 0.916365 |
 | effnet	| 0.931242 |	0.933620 |	0.931242	| 0.931398 | 0.931242	| 0.931379 | 0.931242 |
 | vit |	0.894250	| 0.912612 | 0.894250	| 0.894179	| 0.894250 | 0.895673 |	0.894250 |
-* ResNet18 and EfficientNet are the 2-most efficient models, as it performs well in all metrics. 
+* ResNet18 and EfficientNet are two best models with 0.93 accuracy and F1 score.
 * DenseNet121 and DenseNet161 are unstable, accuracy and F1 are 0.87 and 0.91 correspondingly for both nets. 
 * ViT showed SOTA results (accuracy: 0.89, F1: 0.89) with stable learning. 
 2)	For multi-label classification problem:
