@@ -3,6 +3,7 @@ import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torchvision
 
 import math
 import numpy as np
@@ -115,6 +116,7 @@ class EfficientNet(nn.Module):
             ])
 
         # first steam layer - ordinar conv
+        # STOCHASTOC DEPTH 0.03 0.06
         self.features = [conv_bn_act(3, input_channel, kernel_size=3, stride=2, bias=False)]
 
         # main 7 group of layers
@@ -124,10 +126,13 @@ class EfficientNet(nn.Module):
                 if i == 0:
                     self.features.append(block(inp=input_channel, oup=output_channel, expand_ratio=t, kernel_size=k, 
                                                stride=s, se_reduction=se_reduction, drop_connect_ratio=drop_connect_ratio))
+                    self.features.append(torchvision.ops.StochasticDepth(p=0.06, mode='row'))
                 else:
                     # here stride is equal 1 because only first layer in group could have stride 2, 
                     self.features.append(block(inp=input_channel, oup=output_channel, expand_ratio=t, kernel_size=k, 
                                                stride=1, se_reduction=se_reduction, drop_connect_ratio=drop_connect_ratio))
+                    self.features.append(torchvision.ops.StochasticDepth(p=0.06, mode='row'))
+                    
                 input_channel = output_channel
         
         # building last several layers
