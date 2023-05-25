@@ -4,7 +4,7 @@ Medical image classification plays an increasingly important role in healthcare,
 We will use two datasets for our experiments:
 1) [Blood Cell Images](https://www.kaggle.com/datasets/paultimothymooney/blood-cells): This dataset contains 12,500 augmented images of blood cells with 4 different cell types, namely Eosinophil, Lymphocyte, Monocyte, and Neutrophil. 
 We use this dataset for the multi-class classification problem.
-2) [Random Sample of NIH Chest X-ray Dataset](https://www.kaggle.com/datasets/nih-chest-xrays/sample?select=sample_labels.csv): This dataset contains 5,606 chest X-rays from random patients with 15 classes (14 diseases, and one for "No findings")
+2) [Random Sample of NIH Chest X-ray Dataset](https://www.kaggle.com/datasets/nih-chest-xrays/sample?select=sample_labels.csv): This dataset contains 5,606 chest X-rays from random patients with 15 classes (14 diseases, and one for "No findings").
 We use this dataset for the multi-label classification problem.
 ### Loss function
 Multi-class classification refers to the categorization of instances into precisely one class from a set of multiple classes. So, the commonly used loss function is cross-entropy loss. \
