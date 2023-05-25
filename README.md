@@ -17,9 +17,11 @@ Multi-label classification involves instances that can belong to multiple classe
 ### Evaluation
 ![image](https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/class_loss.jpg) 
 ![image](https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/label_loss.jpg) 
-Multi-class classification | Multi-label classification
-:-------------------------:|:-------------------------:
-![](https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/class_acc.jpg)  |  ![](https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/label_acc.jpg)
+<p align="center">
+  <img src="https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/class_acc.jpg" width="47%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="https://github.com/JuliaKudryavtseva/dl2023_project/blob/main/Image/label_acc.jpg" width="47%">
+</p>
 
 ### Metrics
 The results of our experiments are shown in two tables below.
